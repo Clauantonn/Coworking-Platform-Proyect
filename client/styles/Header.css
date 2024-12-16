@@ -1,0 +1,169 @@
+.header-top {
+  width: 100%;
+  height: 73px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 110px;
+  background-color: #ffffff;
+}
+
+.logo {
+  width: 200px;
+  height: 55px;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-picture {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.auth-buttons a,
+.auth-buttons button {
+  width: auto;
+  min-width: 89px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+.auth-buttons a[href="/Register"],
+.auth-buttons button {
+  background-color: #6433a7;
+  color: white;
+}
+
+.auth-buttons a[href="/Login"] {
+  background-color: #cbc5ea;
+  color: black;
+}
+
+.auth-buttons a:hover,
+.auth-buttons button:hover {
+  opacity: 0.9;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 43px;
+  background-color: #eaeaea;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.nav-bar ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding-left: 110px;
+  margin: 0;
+  list-style-type: none;
+}
+
+.nav-bar li {
+  margin-right: 30px;
+}
+
+.nav-bar li:last-child {
+  margin-right: 0;
+}
+
+.nav-bar a {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover,
+.nav-bar a.active {
+  color: #6433a7;
+}
+
+/* Diseño responsive */
+@media (max-width: 1024px) {
+  .header-top {
+    padding: 0 50px;
+  }
+
+  .nav-bar ul {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .auth-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-bar ul {
+    justify-content: center;
+    padding-left: 20px;
+  }
+
+  .nav-bar li {
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-buttons {
+    flex-direction: column;
+    height: auto;
+    gap: 8px;
+  }
+
+  .auth-buttons a,
+  .auth-buttons button {
+    width: 100%;
+  }
+
+  .nav-bar {
+    height: auto;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .nav-bar li {
+    margin: 5px 0;
+  }
+}

@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap");
+
+/* Variables CSS para colores y estilos comunes */
+:root {
+  --primary-color: #6433A7;
+  --border-color: #ddd;
+  --hover-bg-color: #CBC5EA;
+  --font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Estilos generales */
+.bookings-list-page {
+  padding: 30px 80px 80px;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos de la lista de reservas */
+.bookings-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%; /* Asegura que la lista ocupe todo el ancho disponible */
+}
+
+/* Estilos de la tarjeta de reserva */
+.booking-card {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos de la imagen de la reserva */
+.booking-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.booking-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilos de la información de la reserva */
+.booking-info {
+  padding: 25px 15px 15px;
+}
+
+
+.booking-info h2,
+.page-title {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+  letter-spacing: 0.5px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.booking-info ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.booking-info li {
+  margin-bottom: 5px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  letter-spacing: 0.5px;
+}
+
+.booking-info .booking-status {
+  color: var(--primary-color);
+}
+
+.admin-info {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+/* Estilos del pie de página */
+footer {
+  margin-top: auto;
+  padding: 20px 0;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+/* Estilos del contenedor de filtros */
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.page-title {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Estilos del selector de estado */
+#statusFilter {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  padding: 8px 12px 8px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  width: auto;
+  max-width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+#statusFilter:hover {
+  background-color: var(--hover-bg-color);
+}
+
+#statusFilter:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(100, 51, 167, 0.2);
+}
+
+/* Estilos del icono de filtro */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+#statusFilter {
+  padding-left: 40px; /* Asegúrate de que este valor sea suficiente para que el texto no se superponga con el icono */
+}
+
+/* Media queries para diseño responsive */
+@media screen and (max-width: 1200px) {
+  .bookings-list-page {
+    padding: 20px 5%; /* Añade padding lateral del 5% en pantallas más pequeñas */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bookings-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .page-title,
+  #statusFilter,
+  label[for="statusFilter"] {
+    font-size: 18px;
+  }
+
+  .booking-info li {
+    font-size: 14px;
+  }
+
+  .filter-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .page-title {
+    margin-bottom: 0;
+  }
+
+  .status-filter {
+    width: 100%;
+  }
+
+  #statusFilter {
+    max-width: 150px;
+  }
+
+  .bookings-list-page {
+    padding: 20px 3%; /* Reduce el padding lateral en pantallas aún más pequeñas */
+  }
+
+  .filter-container {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bookings-list-page {
+    padding: 10px 2%; /* Reduce aún más el padding lateral en pantallas muy pequeñas */
+  }
+
+  .bookings-list {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-image {
+    height: 180px;
+  }
+
+  .booking-info {
+    padding: 20px 10px 10px;
+  }
+
+  .page-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .booking-info li,
+  .status-filter,
+  #statusFilter,
+  label[for="statusFilter"] {
+    font-size: 14px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #statusFilter {
+    max-width: none;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0;
+  }
+
+  .no-bookings-message {
+    font-size: 14px;
+  }
+}

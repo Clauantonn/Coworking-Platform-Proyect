@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+html {
+  /* colores */
+  --color-fondo: #eaeaea;
+  --color-texto-Primario: #131313;
+  --color-texto-Secundario: #5d5d5d;
+  --color-marca-Primario: #6433a7;
+  --color-marca-Secundario: #cbc5ea;
+  --color-marca-apoyo: #313d5a;
+  --color-marca-apoyo2: #183642;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, #root {
+  font-family: 'IBM Plex Sans', sans-serif;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  min-height: 100%;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+p {
+  font-weight: 300;
+  font-size: 16px;
+  font-style: normal;
+}
+
+/* Estilos para inputs en foco */
+input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #6433A7;
+}
+
+h1, h2, h3 {
+    letter-spacing: 0.5px;
+}
+

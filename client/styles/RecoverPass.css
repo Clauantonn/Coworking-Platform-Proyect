@@ -1,0 +1,142 @@
+.recover-pass-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.recover-pass-form {
+  background-color: #cbc5ea;
+  width: 500px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.recover-pass-logo {
+  width: 193px;
+  height: 136px;
+  margin-bottom: 20px;
+}
+
+.recover-pass-form h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.recover-pass-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+}
+
+.recover-pass-form label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  color: black;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.recover-pass-form input {
+  width: 300px;
+  height: 44px;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.recover-pass-form input:hover {
+  background-color: #e0e0e0;
+}
+
+.recover-pass-form input::placeholder {
+  font-size: 14px;
+  color: #999;
+}
+
+.recover-pass-form button {
+  width: 200px;
+  height: 48px;
+  background-color: #6433a7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.recover-pass-form button:hover {
+  background-color: #7a4cbf;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recover-pass-form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.recover-pass-form input:focus,
+.recover-pass-form input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #6433a7;
+}
+
+p.recover-pass-info {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  color: rgb(44, 39, 39);
+  font-weight: 400;
+}
+
+/* DiseÃ±o responsive */
+@media (max-width: 768px) {
+  .recover-pass-container {
+    min-height: auto;
+  }
+
+  .recover-pass-form {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recover-pass-form {
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .recover-pass-logo {
+    width: 150px;
+    height: auto;
+  }
+
+  .recover-pass-form form,
+  .recover-pass-form input {
+    width: 100%;
+  }
+
+  .recover-pass-form button {
+    width: 100%;
+  }
+}

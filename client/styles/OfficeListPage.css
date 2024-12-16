@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap");
+
+:root {
+  --primary-color: #6433a7;
+  --border-color: #ddd;
+  --hover-bg-color: #cbc5ea;
+  --font-family: "IBM Plex Sans", sans-serif;
+}
+
+.office-list-page {
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-family);
+  word-wrap: break-word;
+}
+
+.office-list-page h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+  letter-spacing: 0.5px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: left; /* Alinear a la izquierda */
+  width: 100%;
+  max-width: 1200px;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.office-list-page form,
+.ol-list {
+  width: 100%;
+  max-width: 1100px; /* Ajusta este valor según sea necesario */
+}
+
+.ol-fields1 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.filter-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.ol-fields1 input,
+.ol-fields1 select,
+.select-selected {
+  width: 100%;
+  height: 44px;
+  padding: 0 10px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+}
+
+.ol-fields1 input:hover,
+.ol-fields1 select:hover,
+.ol-fields1 input:focus,
+.ol-fields1 select:focus,
+.select-selected:hover,
+.select-selected:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(100, 51, 167, 0.2);
+  outline: none;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon input[type="number"] {
+  padding-right: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.input-with-icon input[type="number"]::-webkit-inner-spin-button,
+.input-with-icon input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.select-selected {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family);
+  font-size: 14px;
+}
+
+.select-selected:after {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.select-items {
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkbox-label:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.checkbox-label input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 5px;
+  position: relative;
+  background-color: white;
+  flex-shrink: 0;
+}
+
+.checkbox-label input[type="checkbox"]:checked::before {
+  content: '\2714';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+.ol-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 30px; /* Añade espacio entre los filtros y la primera tarjeta */
+}
+
+.ol-card {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: black;
+  width: 100%;
+  max-width: 1100px; /* Ajusta este valor según sea necesario */
+  margin: 0 auto 20px;
+}
+
+.olc-imgcontainer {
+  width: 250px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.olc-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.olc-info {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.olc-info h2 {
+  text-transform: uppercase;
+  max-width: fit-content;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.olci-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.olci-office {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.olci-office li {
+  margin-bottom: 10px;
+}
+
+.olci-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.olci-row span {
+  flex: 1;
+}
+
+.olci-equipments {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  border-top: 1px solid var(--primary-color);
+  margin-top: 10px;
+  padding-top: 10px;
+  position: relative;
+}
+
+.olci-equipments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.office-card-reserve-button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  min-width: 90px;
+  margin-top: 10px;
+}
+
+.office-card-reserve-button:hover {
+  background-color: #8344d5;
+  box-shadow: 0 4px 8px rgba(79, 40, 131, 0.3);
+  transition: all 0.3s ease;
+}
+
+.olci-equipments h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.olcie-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-right: 100px;
+}
+
+.olcie-list li {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .ol-fields1 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .filter-group {
+    width: calc(50% - 7.5px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .filter-group {
+    width: calc(25% - 11.25px);
+  }
+
+  .ol-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ol-card {
+    flex-direction: column;
+  }
+
+  .olc-imgcontainer {
+    width: 100%;
+    height: 200px;
+  }
+
+  .olci-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .olci-row span {
+    width: 100%;
+  }
+
+  .olci-office li {
+    margin-bottom: 10px;
+  }
+
+  .office-card-reserve-button {
+    position: static;
+    margin-top: 15px;
+    width: auto;
+    align-self: flex-end;
+  }
+
+  .olcie-list {
+    padding-right: 0; /* Eliminamos el padding en móvil */
+  }
+
+  .olci-equipments {
+    padding-bottom: 0; /* Eliminamos el padding inferior en móvil */
+  }
+
+  .olci-equipments-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .office-card-reserve-button {
+    align-self: center;
+    width: 100%;
+    margin-top:10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .office-list-page form,
+  .ol-list,
+  .ol-card {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .office-list-page form,
+  .ol-list,
+  .ol-card {
+    max-width: 95%;
+  }
+
+  .ol-card {
+    flex-direction: column;
+  }
+
+  .olc-imgcontainer {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.ol-fields1 select,
+.select-selected {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+}
+
+.star-rating {
+  display: inline-flex;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.star {
+  color: #ddd;
+}
+
+.star.filled {
+  color: #ffd700;
+}
+
+.olci-text strong {
+  color: #1a5f7a;
+}

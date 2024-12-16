@@ -1,0 +1,51 @@
+main {
+  background-color: #ffffff;
+  margin: 0px;
+  min-height: calc(100vh - 213px);
+}
+
+/* Mantener el header y .portada sin padding adicional */
+header,
+.portada {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+header {
+  margin-top: 15px;
+}
+
+.portada {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  width: 100%;
+  min-height: 493px;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://images.unsplash.com/photo-1505409859467-3a796fd5798e?q=80&w=2784&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.portada > div {
+  width: 600px;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+  main > *:not(.portada) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portada {
+    min-height: 200px;
+  }
+
+  .portada > div {
+    width: 90%;
+  }
+}

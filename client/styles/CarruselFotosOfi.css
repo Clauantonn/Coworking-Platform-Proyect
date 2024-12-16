@@ -1,0 +1,78 @@
+.carrusel-container {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carrusel-slide {
+  padding: 0;
+}
+
+.carrusel-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+/* Estilos para los nuevos controles de navegación */
+.carrusel-container .carrusel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.carrusel-container .carrusel-controls .carrusel-button {
+  background-color: white;
+  border: 2px solid #6433A7;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.carrusel-container .carrusel-controls .carrusel-button img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.carrusel-container .carrusel-controls .carrusel-button:hover {
+  background-color: #6433A7;
+}
+
+.carrusel-container .carrusel-controls .carrusel-button:hover img {
+  transform: scale(1.1);
+  filter: brightness(0) invert(1);
+}
+
+.carrusel-container .carrusel-controls .carrusel-button:focus {
+  outline: none;
+}
+
+/* Eliminar estilos de los puntos de navegación si ya no se usan */
+.slick-dots {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .carrusel-container {
+    padding-bottom: 0;
+  }
+
+  .carrusel-controls {
+    position: static;
+    margin-top: 10px;
+  }
+}

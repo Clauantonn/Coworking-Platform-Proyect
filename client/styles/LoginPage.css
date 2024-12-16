@@ -1,0 +1,155 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+.login-form-container {
+    background-color: #CBC5EA;
+    width: 500px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.login-logo {
+    width: 193px;
+    height: 136px;
+    margin-bottom: 20px;
+}
+
+.login-form-container h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.login-form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+}
+
+.login-form-container label {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.login-form-container input {
+    width: 300px;
+    height: 44px;
+    padding: 0 10px;
+    margin-bottom: 15px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form-container input:hover {
+    background-color: #e0e0e0;
+}
+
+.login-form-container input::placeholder {
+    font-size: 14px;
+    color: #999;
+}
+
+.login-form-container button {
+    width: 92px;
+    height: 48px;
+    background-color: #6433A7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form-container button:hover,
+.login-form-container button:focus {
+    background-color: #7A4CBF;
+    box-shadow: 0 0 10px rgba(100, 51, 167, 0.5);
+}
+
+.login-form-container button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.login-form-container .forgot-password {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
+    align-self: center;
+}
+
+.login-form-container .forgot-password a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-form-container .forgot-password a:hover {
+    color: #6433A7;
+}
+
+.login-form-container input:focus,
+.login-form-container input:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #6433A7;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .login-form-container {
+        width: 90%;
+        max-width: 500px;
+    }
+    
+    .login-page {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form-container {
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    .login-logo {
+        width: 150px;
+        height: auto;
+    }
+
+    .login-form-container form,
+    .login-form-container input {
+        width: 100%;
+    }
+
+    .login-form-container button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,224 @@
+:root {
+    --primary-color: #6433a7;
+    --secondary-color: #cbc5ea;
+    --font-family: "IBM Plex Sans", sans-serif;
+}
+
+.book-an-office-main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.book-an-office-title-container {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.book-an-office-title {
+    font-size: 24px;
+    font-family: var(--font-family);
+    color: black;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.book-an-office-form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-an-office-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.book-an-office-form ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.book-an-office-form li {
+    margin-bottom: 15px;
+}
+
+.book-an-office-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1a5f7a;
+    font-weight: 600; /* semi-bold */
+}
+
+.book-an-office-form input,
+.book-an-office-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.book-an-office-button-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Centra el contenedor del botón */
+}
+
+.book-an-office-button-container button {
+    width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.book-an-office-button-container button:hover {
+    background-color: #7a3fc8;
+}
+
+.book-an-office-form strong,
+.book-an-office-price strong {
+    color: #1a5f7a;
+}
+
+.book-an-office-form .date-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.book-an-office-form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    padding-right: 30px; /* Espacio para el icono */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: transparent; /* Hacer el fondo transparente */
+}
+
+.book-an-office-form .calendar-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none; /* Permitir clics a través del icono */
+}
+
+/* Mostrar el icono predeterminado del calendario, pero hacerlo transparente */
+.book-an-office-form input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.book-an-office-form .select-container {
+    position: relative;
+    width: 100%;
+}
+
+.book-an-office-form select {
+    width: 100%;
+    padding: 8px;
+    padding-right: 30px; /* Espacio para el icono */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+}
+
+.book-an-office-form .select-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+/* Ocultar la flecha predeterminada del select en navegadores webkit */
+.book-an-office-form select::-ms-expand {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .book-an-office-title {
+        font-size: 20px;
+    }
+
+    .book-an-office-form-container {
+        padding: 15px;
+    }
+
+    .book-an-office-form input,
+    .book-an-office-form select {
+        font-size: 14px;
+    }
+
+    .book-an-office-button-container button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-an-office-title {
+        font-size: 18px;
+    }
+
+    .book-an-office-form-container {
+        padding: 10px;
+    }
+
+    .book-an-office-form li {
+        margin-bottom: 10px;
+    }
+}
+
+.book-an-office-main h2 {
+    font-size: 16px;
+    font-family: "IBM Plex Sans", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 500; /* regular */
+    color: #6433a7;
+    margin-bottom: 20px;
+    text-align: left; /* Alineado a la izquierda */
+    width: 100%;
+}
+
+.book-an-office-form ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.book-an-office-form li label {
+    font-weight: bold;
+    color: #1a5f7a;
+    margin-bottom: 5px;
+}
+
+.book-an-office-form strong {
+    color: #1a5f7a;
+}

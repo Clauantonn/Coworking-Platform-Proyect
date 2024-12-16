@@ -1,0 +1,247 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.user-profile-page {
+  flex: 1 0 auto;
+  font-family: 'IBM Plex Sans', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer {
+  flex-shrink: 0;
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+}
+
+.profile-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.avatar-update-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  max-width: 1060px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.avatar-container {
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 5px solid #f0f0f0;
+  border-radius: 50%;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-image:hover {
+  opacity: 0.7;
+  border-color: #6433A7;
+}
+
+.avatar-form-container {
+  width: 1060px;
+  height: 178px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.avatar-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-input {
+  width: 100%;
+  height: 25px;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+}
+
+.form-input::placeholder {
+  color: #ccc;
+}
+
+.form-input:hover {
+  border-color: #999;
+}
+
+/* Estilos base para formularios */
+.password-change-form,
+.profile-update-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1060px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.profile-update-form {
+  margin-bottom: 20px;
+}
+
+.password-change-form h3,
+.profile-update-form h3 {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Estilos base para inputs de formularios */
+.password-change-form input,
+.profile-update-form input {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.profile-update-form .readonly-input {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* Estilos base para todos los labels */
+.profile-update-form label,
+.password-change-form label,
+.avatar-form-container label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+  align-self: flex-start;
+  width: 100%;
+}
+
+/* Estilos base para todos los botones */
+.update-avatar-button,
+.profile-update-form button,
+.password-change-form button,
+.toggle-password-form-button {
+  background-color: #6433A7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.password-change-form button {
+  width: 100%;
+  max-width: 300px;
+}
+
+.toggle-password-form-button {
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+/* Estilo hover/focus unificado para todos los botones */
+.update-avatar-button:hover,
+.update-avatar-button:focus,
+.profile-update-form button:hover,
+.profile-update-form button:focus,
+.password-change-form button:hover,
+.password-change-form button:focus,
+.toggle-password-form-button:hover,
+.toggle-password-form-button:focus {
+  background-color: #7b47c1;
+  box-shadow: 0 4px 8px rgba(100, 51, 167, 0.3);
+}
+
+.password-section {
+  width: 100%;
+  max-width: 1060px;
+  margin-top: 20px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .user-profile-page {
+    padding: 10px;
+  }
+
+  .avatar-update-container,
+  .password-change-form,
+  .profile-update-form {
+    padding: 15px;
+  }
+
+  .profile-title {
+    font-size: 20px;
+  }
+
+  .update-avatar-button,
+  .password-change-form button,
+  .profile-update-form button,
+  .toggle-password-form-button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .password-change-form input,
+  .profile-update-form input {
+    max-width: 100%;
+  }
+
+  .password-change-form button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-title {
+    font-size: 18px;
+  }
+
+  .avatar-update-container,
+  .password-change-form {
+    padding: 10px;
+  }
+}
+
+

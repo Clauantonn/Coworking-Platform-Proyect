@@ -1,0 +1,323 @@
+.booking-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  min-height: 100vh;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.booking-title {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.booking-title h1 {
+  font-size: 24px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color: #6433a7;
+  margin: 0;
+}
+
+.booking-details-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.carrusel {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.booking-details-card ul {
+  list-style-type: none;
+  border: 1px solid rgba(128, 128, 128, 0.321);
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.booking-details-card li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.booking-details-card li strong {
+  color: #1a5f7a;
+}
+
+.booking-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.button-primary,
+#submit-vote-button {
+  background-color: #6433a7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+
+.button-primary:hover {
+  background-color: #7a4cbf;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+#submit-vote-button:hover {
+  background-color: #7a4cbf;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 51, 167, 0.5);
+}
+
+#submit-vote-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 51, 167, 0.5);
+}
+.button-primary:active {
+  transform: translateY(1px);
+}
+
+#submit-vote-button:active {
+  transform: translateY(1px);
+}
+
+/* Contenedor para la sección de estrellitas y el textarea */
+.can-vote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 1rem auto; /* Cambiado de 2rem a 1rem */
+  border-radius: 12px;
+  width: 50%;
+  max-width: 600px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(100, 51, 167, 0.15);
+  border: 1px solid rgba(100, 51, 167, 0.2);
+}
+
+.can-vote img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.can-vote p {
+  color: #6433a7;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.text-area-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.estrellitas-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f8f5ff;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 51, 167, 0.1);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.estrellitas {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+  opacity: 0.7;
+}
+
+.estrellitas:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 4px 6px rgba(100, 51, 167, 0.2));
+  opacity: 1;
+}
+
+.estrellitas.selected {
+  opacity: 1;
+  transform: scale(1.05);
+  filter: drop-shadow(0 3px 5px rgba(100, 51, 167, 0.3));
+}
+
+.estrellitas.unselected {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+/* Animación suave para las estrellas */
+@keyframes starPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.estrellitas.just-selected {
+  animation: starPop 0.3s ease-out;
+}
+
+.text-area {
+  width: 100%;
+  height: 80px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  resize: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.text-area:hover {
+  border-color: #6433a7;
+}
+
+.text-area:focus {
+  border-color: #6433a7;
+  box-shadow: 0 0 0 2px rgba(100, 51, 167, 0.2);
+  outline: none;
+}
+
+.text-area::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .booking-details {
+    padding: 20px 40px;
+  }
+
+  .booking-details-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .carrusel {
+    width: 48%;
+    margin-bottom: 0;
+  }
+
+  .booking-details-card ul {
+    width: 48%;
+  }
+
+  .booking-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .button-primary {
+    width: auto;
+  }
+  .can-vote {
+    max-width: 600px;
+    padding: 25px;
+  }
+  
+  .text-area {
+    height: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .booking-details {
+    padding: 20px 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .can-vote {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .estrellitas-container {
+    gap: 0.5rem;
+  }
+
+  .estrellitas {
+    width: 28px;
+    height: 28px;
+  }
+
+  .text-area {
+    height: 100px;
+  }
+}
+
+/* Agregar estilo para el enlace de volver */
+.booking-details-card a {
+  display: inline-block;
+  background-color: #6433a7;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  max-width: 200px;
+}
+
+.booking-details-card a:hover {
+  background-color: #7a4cbf;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.booking-details-card a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 51, 167, 0.5);
+}
+
+.booking-details-card a:active {
+  transform: translateY(1px);
+}

@@ -1,0 +1,977 @@
+{
+	"info": {
+		"_postman_id": "4eebdb4c-7073-4c6d-be89-085ef6b38c27",
+		"name": "Coworking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38140514"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"\",\n    \"email\":\"\",\n    \"password\":\"123456\",\n    \"name\":\"\",\n    \"lastname\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate New User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "2e2b692bdd365359962572c8013687",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/users/activate/:registrationCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"activate",
+								":registrationCode"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "registrationCode",
+									"value": "6618a895f6312a66351976ceb5d401"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"email\":\"josebasaldana@gmail.com\",\n    \"password\":\"123456\"\n    \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"email\":\"pepe@mail.com\",\n    \"password\":\"123456\"\n    \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcyNzkwNjkwMywiZXhwIjoxNzI4NTExNzAzfQ.Wrx64wZifT_4FCcRqBmHgIa1GhW7nXaRb4nvuxaxrMA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/Users/alejandroperezbanks/Desktop/imagenes para prubas clase/Avatar de Avatar.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User Profile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcyNzkwNzg5NCwiZXhwIjoxNzI4NTEyNjk0fQ.BcAJk8SOawgKMEcD77HrULdUxXq1qZv7oCFDzMJmRGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "pepito",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/editProfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"editProfile"
+							],
+							"query": [
+								{
+									"key": "idUser",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Avatar Upload / Change",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcyNzkwNjkwMywiZXhwIjoxNzI4NTExNzAzfQ.Wrx64wZifT_4FCcRqBmHgIa1GhW7nXaRb4nvuxaxrMA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/olive/OneDrive/Imágenes/REAL MADRID WALLPAPER.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/avatar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send RecoverPassCode",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "olivermauro@outlook.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/password/recover",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"password",
+								"recover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "newPassword",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "repeatNewPassword",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/password/reset/:recoverPassCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"password",
+								"reset",
+								":recoverPassCode"
+							],
+							"variable": [
+								{
+									"key": "recoverPassCode",
+									"value": "9640e35d4f18ca6a4c316de6873486"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Offices",
+			"item": [
+				{
+					"name": "Create Office ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzI3ODA2ODY1LCJleHAiOjE3Mjg0MTE2NjV9.AkWFDpMnbjoJ5CpGXG0zT9jSXPNhgXaKHWRsBaqfJNU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "oficina 03",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/olive/OneDrive/Imágenes/athletic-bilbao.png"
+								},
+								{
+									"key": "equipments",
+									"value": "[1, 3]",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "una mesa y una silla",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Av Siempre Viva",
+									"type": "text"
+								},
+								{
+									"key": "workspace",
+									"value": "Office",
+									"type": "text"
+								},
+								{
+									"key": "capacity",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/office/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Office ADMIN",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzI3OTA4NDQ2LCJleHAiOjE3Mjg1MTMyNDZ9.zVpSy9AVWtpO4EjfuAtOU5tC2dR84d9XPNMSYTKhp6k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "Amplia sala",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/office/:idOffice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								":idOffice"
+							],
+							"variable": [
+								{
+									"key": "idOffice",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Office List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzI3Nzc1OTU1LCJleHAiOjE3MjgzODA3NTV9.n0EKYrFFjFmTjPJAKRC4WhlTAB0pwVQwUo2kNzXPIB8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "keyword",
+									"value": "oficina 01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/office/list?keyword=Ofi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								"list"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Ofi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Equipments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/office/equipments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "individual Office",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/office/:idOffice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								":idOffice"
+							],
+							"variable": [
+								{
+									"key": "idOffice",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Office Equipment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/office/:idOffice/equipments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								":idOffice",
+								"equipments"
+							],
+							"variable": [
+								{
+									"key": "idOffice",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Office ADMIN",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcyNzkwOTE5MCwiZXhwIjoxNzI4NTEzOTkwfQ.XNZ_Ydz4Dp6zif4VMdVKHw3XCDB8SmAnuQRzi4p1EhE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/office/:idOffice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								":idOffice"
+							],
+							"variable": [
+								{
+									"key": "idOffice",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vote Booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcyNzg3MzQzMSwiZXhwIjoxNzI4NDc4MjMxfQ.e3Ex9HXQJ0MeGMtDE2Rv4n_L1cwKncsLMPbNUWj25_g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vote",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "una cagada",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/office/:idOffice/:idBooking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"office",
+								":idOffice",
+								":idBooking"
+							],
+							"variable": [
+								{
+									"key": "idOffice",
+									"value": "1"
+								},
+								{
+									"key": "idBooking",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Book an Office",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzI3OTA4NDQ2LCJleHAiOjE3Mjg1MTMyNDZ9.zVpSy9AVWtpO4EjfuAtOU5tC2dR84d9XPNMSYTKhp6k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "checkIn",
+									"value": "2024-10-06 09:00:00",
+									"type": "text"
+								},
+								{
+									"key": "checkOut",
+									"value": "2024-10-06 14:00:00",
+									"type": "text"
+								},
+								{
+									"key": "guests",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api//booking/:idOffice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"",
+								"booking",
+								":idOffice"
+							],
+							"variable": [
+								{
+									"key": "idOffice",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/booking/:idBooking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"booking",
+								":idBooking"
+							],
+							"variable": [
+								{
+									"key": "idBooking",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Booking",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcyODYzNTc1NywiZXhwIjoxNzI5MjQwNTU3fQ.mCFVd1qeimDV-Uxq5hKbnColymOwMy3kBOq394wOIEc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/bookings/:idBooking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bookings",
+								":idBooking"
+							],
+							"variable": [
+								{
+									"key": "idBooking",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Booking Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcyODYzNTc1NywiZXhwIjoxNzI5MjQwNTU3fQ.mCFVd1qeimDV-Uxq5hKbnColymOwMy3kBOq394wOIEc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/bookings/:idBooking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"bookings",
+								":idBooking"
+							],
+							"variable": [
+								{
+									"key": "idBooking",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vote Booking arferuse",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/booking/:idBooking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"booking",
+								":idBooking"
+							],
+							"variable": [
+								{
+									"key": "idBooking",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BookingList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcyODU0Nzg3NCwiZXhwIjoxNzI5MTUyNjc0fQ.Jj8Lzu7cC2HczeN4_kHQh9vfXWAHgtFbCxAUWcEAFF0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "keyword",
+									"value": "oficina 01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api//list/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"",
+								"list",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BookingList admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzI4NjM0NTYzLCJleHAiOjE3MjkyMzkzNjN9.HKUj7pFqd94-hUjO_GtWIPpclxrSK9_WG_AxBcvcBbk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "keyword",
+									"value": "CONFIRMED",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api//list/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"",
+								"list",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Booking Aproval",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcyODU0Nzg3NCwiZXhwIjoxNzI5MTUyNjc0fQ.Jj8Lzu7cC2HczeN4_kHQh9vfXWAHgtFbCxAUWcEAFF0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "keyword",
+									"value": "oficina 01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api//list/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"",
+								"list",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
