@@ -8,7 +8,7 @@ Portal donde publicar espacios de coworking, reservar y gestionar cada espacio.
 
 2. Guardar el archivo `.env.example` como `.env` y cubrir los datos necesarios.
 
-3. Ejecutar `npm run initDb` para crear las tablas necesarias en la base de datos.
+3. Ejecutar `npm run initdb` para crear las tablas necesarias en la base de datos.
 
 4. Ejecutar `npm run dev` para lanzar el servidor.
 
