@@ -38,31 +38,21 @@ const editProfileUserController = async (req, res, next) => {
             generateErrorUtil(' Usuario no encontrado ', 404);
         }
 
-        // Si el usuario ha enviado un email lo actualizamos.
-        if (email) {
-            await pool.query(`UPDATE users SET email = ? WHERE id = ?`, [
-                email,
-                idUser,
-            ]);
-        }
-        // Si el usuario ha enviado un username lo actualizamos.
-        if (username) {
-            await pool.query(`UPDATE users SET username = ? WHERE id = ?`, [
-                username,
-                idUser,
-            ]);
-        }
-        // Si el usuario ha enviado un nombre lo actualizamos.
-        if (name) {
-            await pool.query(`UPDATE users SET name = ? WHERE id = ?`, [
-                name,
-                idUser,
-            ]);
-        }
-        // Si el usuario ha enviado un apellido lo actualizamos.
-        if (lastName) {
-            await pool.query(`UPDATE users SET lastName = ? WHERE id = ?`, [
-                lastName,
+        // Construimos un objeto con los campos a actualizar
+        const updateFields = {};
+        if (email) updateFields.email = email;
+        if (username) updateFields.username = username;
+        if (name) updateFields.name = name;
+        if (lastName) updateFields.lastName = lastName;
+
+        // Si hay campos para actualizar, realizamos un único update.
+        if (Object.keys(updateFields).length > 0) {
+            const setClause = Object.keys(updateFields)
+                .map((field) => `${field} = ?`)
+                .join(', ');
+
+            await pool.query(`UPDATE users SET ${setClause} WHERE id = ?`, [
+                ...Object.values(updateFields),
                 idUser,
             ]);
         }

@@ -21,7 +21,7 @@ const bookOfficeByIdController = async (req, res, next) => {
 
         // Verificamos si la oficina existe
         const [office] = await pool.query(
-            'SELECT id, capacity FROM offices WHERE id = ?',
+            'SELECT id, capacity, name FROM offices WHERE id = ?',
             [idOffice],
         );
 
@@ -29,7 +29,7 @@ const bookOfficeByIdController = async (req, res, next) => {
             throw generateErrorUtil('No existe la oficina solicitada', 404);
         }
 
-        // Verificamos que las fechas son válidas
+        // Verificamos que las fechas son v��lidas
         if (
             new Date(checkIn) >= new Date(checkOut) ||
             new Date(checkIn) < new Date()
@@ -106,23 +106,19 @@ const bookOfficeByIdController = async (req, res, next) => {
             // Enviamos un correo al administrador
             const adminEmailSubject = 'Nueva reserva pendiente de confirmación';
             const adminEmailBody = `
-            <p>Hola ${adminData.username},</p>
+            <p>Hola ${adminData[0].username},</p>
 
            <p> Se ha realizado una nueva reserva que requiere tu confirmación:</p>
 
+           <p> Usuario: ${userData[0].name}, ${userData[0].email}.</p>
 
-           <p> Usuario: ${userData[0].name} (ID: ${idUser})</p>
+           <p> Oficina: ${office[0].name}.</p>
 
-           <p> Oficina: #${idOffice}</p>
-
-           <p> Precio: €${price}</p>
-
+           <p> Precio: €${price}.</p>
 
            <p> Por favor, accede al panel de administración para confirmar o rechazar esta reserva.</p>
 
-
            <p> Gracias.</p>
-
             `;
 
             await sendMailUtil(

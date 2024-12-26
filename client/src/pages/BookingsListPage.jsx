@@ -66,15 +66,6 @@ const BookingsListPage = () => {
     fetchBookings();
   }, []);
 
-  // Mientras se está cargando, mostramos un mensaje de carga.
-  //  if (isLoading) {
-  //   return (
-  //      <main>
-  //       <h1>Obteniendo reservas...</h1>
-  //      <p>Por favor, espera un momento mientras procesamos tu solicitud.</p>
-  //    </main>
-  //  );
-  // }
 
   // Si hay un error, mostramos un mensaje de error.
   if (error) {

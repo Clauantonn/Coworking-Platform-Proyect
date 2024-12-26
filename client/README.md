@@ -1,5 +1,19 @@
 # Coworking - Cliente React
 
+# Coworking
+
+Portal donde publicar espacios de coworking, reservar y gestionar cada espacio.
+
+## Instalar
+
+1. Instalar las dependencias mediante el comando `npm install` o `npm i`.
+
+2. Guardar el archivo `.env.example` como `.env` y cubrir los datos necesarios.
+
+3. Ejecutar `npm run initdb` para crear las tablas necesarias en la base de datos.
+
+4. Ejecutar `npm run dev` para lanzar el servidor.
+
 Este proyecto es la parte del cliente para el portal de espacios de coworking.
 
 ## Características principales

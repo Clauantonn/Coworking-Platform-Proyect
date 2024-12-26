@@ -30,6 +30,9 @@ const UserProfilePage = () => {
   // Agregamos un nuevo estado para controlar la visibilidad del formulario
   const [showPasswordForm, setShowPasswordForm] = useState(false);
 
+  // Agregamos estado para la previsualización
+  const [avatarPreview, setAvatarPreview] = useState(null);
+
   // Función que maneja el envío del formulario.
   const handleUpdateAvatar = async (e) => {
     try {
@@ -61,6 +64,9 @@ const UserProfilePage = () => {
 
       // Actualizamos la info del avatar en el State del usuario.
       authUpdateAvatarState(body.data.avatar);
+
+      // Limpiamos la URL de previsualización después de guardar
+      setAvatarPreview(null);
 
       // Mostramos un mensaje satisfactorio al usuario.
       toast.success(body.message, {
@@ -121,8 +127,12 @@ const UserProfilePage = () => {
 
   // Función para manejar el cambio de archivo
   const handleFileChange = (e) => {
-    if (e.target.files[0]) {
-      setAvatar(e.target.files[0]);
+    const file = e.target.files[0];
+    if (file) {
+      setAvatar(file);
+      // Crear URL temporal para previsualización
+      const previewUrl = URL.createObjectURL(file);
+      setAvatarPreview(previewUrl);
     }
   };
 
@@ -173,7 +183,13 @@ const UserProfilePage = () => {
 
       <div className="avatar-update-container">
         <div className="avatar-container" onClick={handleAvatarClick}>
-          {authUser.avatar ? (
+          {avatarPreview ? (
+            <img
+              src={avatarPreview}
+              alt="previsualización de avatar"
+              className="profile-image"
+            />
+          ) : authUser.avatar ? (
             <img
               src={`${VITE_API_URL}/${authUser.avatar}`}
               alt={`foto de perfil de ${authUser.username}`}

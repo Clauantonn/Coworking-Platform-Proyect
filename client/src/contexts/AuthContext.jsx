@@ -11,9 +11,10 @@ const AuthProvider = ({ children }) => {
     localStorage.getItem(VITE_AUTH_TOKEN) || null
   );
 
-  const [authUser, setAuthUser] = useState(
-    localStorage.getItem("AuthUser") || null
-  );
+  const [authUser, setAuthUser] = useState(() => {
+    const savedUser = localStorage.getItem("AuthUser");
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
   // Declaramos una variable que indica que el fetch a los datos
   // del usuario no ha terminado. Util para activacion de usuario por ejemplo.
