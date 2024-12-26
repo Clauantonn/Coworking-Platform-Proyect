@@ -30,7 +30,7 @@ const getEquipmentsController = async (req, res, next) => {
 
         // Si no existe ningun equipamiento con ese ID, generamos un error.
         if (equipments.length < 1) {
-            generateErrorUtil('No existe ese equipamiento', 404);
+            generateErrorUtil('No existe ningún equipamiento', 404);
         }
 
         //Enviamos una respuesta al usuario
